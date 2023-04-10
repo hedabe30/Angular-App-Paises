@@ -16,8 +16,8 @@ export class PorPaisComponent {
 
   constructor(private paisService: PaisService) {}
 
-  buscar() {
-    console.log(this.termino)
+  buscar( termino: string ) {
+    this.termino = termino;
     this.hayError = false;
 
     this.paisService.buscarPais(this.termino)
@@ -30,5 +30,10 @@ export class PorPaisComponent {
           this.paises = [];
         }
       })
+  }
+
+  sugerencias( termino: string) {
+    this.hayError = false;
+    //TODO: CREAR SUGERENCIAS
   }
 }
